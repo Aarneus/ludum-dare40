@@ -119,11 +119,13 @@
 
 (defn load-and-play-music! [filename silent?]
   "Plays the given sound file as a music channel"
-  (swap! musics assoc filename (music filename :play :is-looping :set-looping true :set-volume (if silent? 0.0 1.0))))
+  (swap! musics assoc filename (music filename :is-looping :set-looping true :set-volume (if silent? 0.0 1.0))))
 
 (defn set-music-volume! [filename volume]
   (let [song (get @musics filename)]
-    (when (some? song) (music! song :set-volume volume))))
+    (when (some? song)
+      (when (> volume 0) (music! song :play))
+      (music! song :set-volume volume))))
 
 
 (defn create-sprite! [filename x y z width height frame-x frame-y]

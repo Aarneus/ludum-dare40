@@ -44,9 +44,9 @@
 (defgame ld40-game
   :on-create
   (fn [this]
-    (u/load-and-play-music! "population.wav" true)
-    (u/load-and-play-music! "military.wav" true)
-    (u/load-and-play-music! "wealth.wav" true)
+    (u/load-and-play-music! "population.ogg" false)
+    (u/load-and-play-music! "military.ogg" false)
+    (u/load-and-play-music! "wealth.ogg" false)
     (u/play-sound! "game-over.wav")
     (set-screen! this main-screen)))
 

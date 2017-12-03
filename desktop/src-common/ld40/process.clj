@@ -21,9 +21,9 @@
   (let [total-military (d/get-total-stat entities :military)
         total-population (d/get-total-stat entities :population)
         total-wealth (d/get-total-stat entities :wealth)]
-    (update-music-volume! "military.wav" total-military)
-    (update-music-volume! "population.wav" total-population)
-    (update-music-volume! "wealth.wav" total-wealth)
+    (update-music-volume! "military.ogg" total-military)
+    (update-music-volume! "population.ogg" total-population)
+    (update-music-volume! "wealth.ogg" total-wealth)
     entities))
 
 
